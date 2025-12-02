@@ -1,0 +1,21 @@
+.profiles-section {
+    display: flex;
+
+    flex-direction: row;
+
+    flex-wrap: wrap;
+    width: 80%;
+    margin:8em;
+   
+}
+
+@media (max-width: 768px) {
+    .profiles-section {
+        flex-direction: column;
+        /* Aquí está la magia: cambia de FILA a COLUMNA (vertical) */
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
