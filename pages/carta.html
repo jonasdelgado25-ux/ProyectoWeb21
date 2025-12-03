@@ -12,6 +12,52 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>Carta</title>
 </head>
+<!--Script para el envio del mensaje en el formulario-->
+<script>
+    function mostrarDatosTransferencia() {
+        const selector = document.getElementById('pago');
+        const cajaDatos = document.getElementById('caja-transferencia');
+
+        if (selector.value === "Transferencia") {
+            cajaDatos.classList.remove('oculto');
+        } else {
+            cajaDatos.classList.add('oculto');
+        }
+    }
+
+    function enviarAWhatsApp() {
+        const telefono = "5493816151497"; 
+
+        const cliente = document.getElementById('cliente').value;
+        const direccion = document.getElementById('direccion').value;
+        const pedido = document.getElementById('pedido').value;
+        const pago = document.getElementById('pago').value;
+
+        if (cliente === "" || direccion === "" || pedido === "") {
+            alert("Por favor, completa los datos obligatorios.");
+            return;
+        }
+
+        // CORRECCIÓN 1: Usamos 'let' en lugar de 'const' para poder modificarlo
+        let mensaje = `Hola Pizza & Pazzione! Quiero hacer un pedido:\n\n` +
+                      `○ *Nombre:* ${cliente}\n` +
+                      `○ *Dirección:* ${direccion}\n` +
+                      `○ *Pedido:* ${pedido}\n` +
+                      `○ *Pago con:* ${pago}`;
+
+        // Ahora sí podemos modificar la variable porque es 'let'
+        if (pago === "Transferencia") {
+            mensaje += `\n(○ Envío comprobante en breve)`;
+        }
+
+        // CORRECCIÓN 3: Usamos encodeURIComponent
+        // Esto convierte los \n en %0A y los espacios en %20 automáticamente.
+        // Evita que el enlace se rompa si el cliente escribe un "&" o símbolos raros.
+        const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+        
+        window.open(url, '_blank');
+    }
+</script>
 
 <body>
     <header>
@@ -28,8 +74,8 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link active" href="../index.html">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/pages/nosotros.html">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/pages/contacto.html">Contacto</a></li>
                         <li class="nav-item"><a class="nav-link" href="/pages/carta.html">Carta</a></li>
 
                     </ul>
@@ -112,6 +158,49 @@
 
         </section>
 
+        <section class="pedido-container">
+            <div class="formulario-box">
+                <h3>🍕 Hacé tu pedido ahora</h3>
+
+                <form id="form-pedido">
+                    <div class="input-group">
+                        <label for="cliente">Tu Nombre:</label>
+                        <input type="text" id="cliente" placeholder="Ej: Juan Pérez" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="direccion">Dirección de entrega:</label>
+                        <input type="text" id="direccion" placeholder="Calle, número y piso" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="pedido">¿Qué vas a comer hoy?</label>
+                        <textarea id="pedido" rows="3" placeholder="Ej: 1 Napolitana y 2 Empanadas..."
+                            required></textarea>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="pago">Forma de Pago:</label>
+                        <select id="pago" onchange="mostrarDatosTransferencia()">
+                            <option value="Efectivo">Efectivo 💵</option>
+                            <option value="Transferencia">Transferencia 📱</option>
+                        </select>
+                    </div>
+
+                    <div id="caja-transferencia" class="datos-banco oculto">
+                        <p><strong>Alias:</strong> PIZZA.PAZZIONE.ROLLING</p>
+                        <p><strong>CBU:</strong> 2132124684643123214</p>
+                        <p><strong>Banco:</strong> Mercado Pago / ROLLING BANK </p>
+                        <small>⚠️ Por favor, envía el comprobante al chat de WhatsApp.</small>
+                    </div>
+
+                    <button type="button" class="btn-whatsapp" onclick="enviarAWhatsApp()">
+                        <i class="fab fa-whatsapp"></i> Enviar Pedido por WhatsApp
+                    </button>
+                </form>
+            </div>
+        </section>
+
     </main>
 
 
@@ -130,16 +219,13 @@
                 <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
                     <h5 class="text-uppercase mb-4 font-weight-bold text-white">Enlaces Rápidos</h5>
                     <p>
-                        <a href="#" class="text-white text-decoration-none">La Carta</a>
+                        <a href="carta.html" class="text-white text-decoration-none">Carta</a>
                     </p>
                     <p>
-                        <a href="#" class="text-white text-decoration-none">Fotos</a>
+                        <a href="contacto.html" class="text-white text-decoration-none">Contacto</a>
                     </p>
                     <p>
-                        <a href="#" class="text-white text-decoration-none">Eventos</a>
-                    </p>
-                    <p>
-                        <a href="#" class="text-white text-decoration-none">Reservas</a>
+                        <a href="nosotros.html" class="text-white text-decoration-none">Nosotros</a>
                     </p>
                 </div>
 
