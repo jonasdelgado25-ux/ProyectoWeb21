@@ -36,17 +36,82 @@
         </nav>
     </header>
     <main>
-       <section>
+
+        <div class="container my-5">
+            <h2 class="text-center mb-4">Hacer un Pedido</h2>
+
+            <form class="p-4 border rounded shadow-sm bg-white">
+                <!-- Datos del cliente -->
+                <h5 class="mb-3">Datos del Cliente</h5>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <label class="form-label">Nombre *</label>
+                        <input type="text" class="form-control" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Teléfono *</label>
+                        <input type="tel" class="form-control" placeholder="Ej: 11 5555-5555" required>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Dirección *</label>
+                        <input type="text" class="form-control" placeholder="Calle, número, barrio" required>
+                    </div>
+                </div>
+
+                <!-- Selección de pizza -->
+                <h5 class="mb-3">Tu Pedido</h5>
+
+                <div class="mb-3">
+                    <label class="form-label">Tipo de Pizza *</label>
+                    <select class="form-select" required>
+                        <option selected disabled>Elegí una pizza</option>
+                        <option>Muzzarella</option>
+                        <option>Napolitana</option>
+                        <option>Fugazzeta</option>
+                        <option>Calabresa</option>
+                        <option>Especial de la Casa</option>
+                    </select>
+                </div>
+
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Tamaño *</label>
+                        <select class="form-select" required>
+                            <option selected disabled>Seleccionar</option>
+                            <option>Individual</option>
+                            <option>Mediana</option>
+                            <option>Grande</option>
+                            <option>Familiar</option>
+                        </select>
+                    </div>
+
+                    <!-- Comentarios -->
+                    <div class="mb-3">
+                        <label class="form-label">Comentarios</label>
+                        <textarea class="form-control" rows="3"
+                            placeholder="Ej: sin ajo, cortar en 8 porciones"></textarea>
+                    </div>
+
+                    <!-- Botón -->
+                    <button type="submit" class="btn btn-danger w-100">Enviar Pedido</button>
+            </form>
+        </div>
+
+
+
+
+
+        <section>
             <div class="w-25 border mb-4">
                 <h1>contacto</h1>
 
                 <label for="nombre" class="form-label" class="d-block">nombre </label>
-                    <input type="name" class="form-control" class="w-100" placeholder="name">
-                
+                <input type="name" class="form-control" class="w-100" placeholder="name">
 
-                 <label for="telefono" class="form-label" class="d-block">telefono</label>
-                    <input type="number" name="telefono" class="w-100" id="">
-               
+
+                <label for="telefono" class="form-label" class="d-block">telefono</label>
+                <input type="number" name="telefono" class="w-100" id="">
+
                 <label for="direccion" class="form-label" class="d-block">Direccion </label>
                 <input type="direccion" class="form-contrl" class="w-100" class="d-block">
 
@@ -59,10 +124,10 @@
                 </div>
 
         </section>
-       
+
         <article></article>
     </main>
-    
+
     <footer class="text-white pt-5 pb-4" style="background-color: #fd7e14;">
         <div class="container text-center text-md-start">
             <div class="row text-center text-md-start">
