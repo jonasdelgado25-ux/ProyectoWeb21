@@ -36,96 +36,100 @@
         </nav>
     </header>
     <main>
-
-        <div class="container my-5">
-            <h2 class="text-center mb-4">Hacer un Pedido</h2>
-
-            <form class="p-4 border rounded shadow-sm bg-white">
-                <!-- Datos del cliente -->
-                <h5 class="mb-3">Datos del Cliente</h5>
-                <div class="row g-3 mb-4">
-                    <div class="col-md-6">
-                        <label class="form-label">Nombre *</label>
-                        <input type="text" class="form-control" placeholder="Tu nombre" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label">Teléfono *</label>
-                        <input type="tel" class="form-control" placeholder="Ej: 11 5555-5555" required>
-                    </div>
-                    <div class="col-12">
-                        <label class="form-label">Dirección *</label>
-                        <input type="text" class="form-control" placeholder="Calle, número, barrio" required>
-                    </div>
-                </div>
-
-                <!-- Selección de pizza -->
-                <h5 class="mb-3">Tu Pedido</h5>
-
-                <div class="mb-3">
-                    <label class="form-label">Tipo de Pizza *</label>
-                    <select class="form-select" required>
-                        <option selected disabled>Elegí una pizza</option>
-                        <option>Muzzarella</option>
-                        <option>Napolitana</option>
-                        <option>Fugazzeta</option>
-                        <option>Calabresa</option>
-                        <option>Especial de la Casa</option>
-                    </select>
-                </div>
-
-                <div class="row g-3 mb-3">
-                    <div class="col-md-6">
-                        <label class="form-label">Tamaño *</label>
-                        <select class="form-select" required>
-                            <option selected disabled>Seleccionar</option>
-                            <option>Individual</option>
-                            <option>Mediana</option>
-                            <option>Grande</option>
-                            <option>Familiar</option>
-                        </select>
-                    </div>
-
-                    <!-- Comentarios -->
-                    <div class="mb-3">
-                        <label class="form-label">Comentarios</label>
-                        <textarea class="form-control" rows="3"
-                            placeholder="Ej: sin ajo, cortar en 8 porciones"></textarea>
-                    </div>
-
-                    <!-- Botón -->
-                    <button type="submit" class="btn btn-danger w-100">Enviar Pedido</button>
-            </form>
+        <section class="py-5">
+    <div class="container">
+        
+        <div class="text-center mb-5">
+            <h2 class="fw-bold display-5">Contáctanos</h2>
+            <p class="text-secondary">Estamos aquí para escucharte. ¿Tienes alguna duda o sugerencia?</p>
         </div>
 
-
-
-
-
-        <section>
-            <div class="w-25 border mb-4">
-                <h1>contacto</h1>
-
-                <label for="nombre" class="form-label" class="d-block">nombre </label>
-                <input type="name" class="form-control" class="w-100" placeholder="name">
-
-
-                <label for="telefono" class="form-label" class="d-block">telefono</label>
-                <input type="number" name="telefono" class="w-100" id="">
-
-                <label for="direccion" class="form-label" class="d-block">Direccion </label>
-                <input type="direccion" class="form-contrl" class="w-100" class="d-block">
-
-                <label for="exampleFormControlInput1" class="d-block" class="form-label">Email</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" class="w-100"
-                    placeholder="juan48@gmail.com">
-                <div class="mb-3 w-100 mt-2">
-                    <label for="exampleFormControlTextarea1" class="form-label">Mensajeria</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" class="w-100" rows="3"></textarea>
+        <div class="row g-5">
+            
+            <div class="col-md-5">
+                
+                <div class="d-flex align-items-start mb-4">
+                    <div class="bg-naranja text-white rounded-circle p-3 me-3 d-flex justify-content-center align-items-center" style="width: 50px; height: 50px;">
+                        <i class="fas fa-map-marker-alt fa-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="fw-bold">Nuestra Ubicación</h4>
+                        <p class="mb-0 text-muted">Av. Principal 123, Barrio Norte</p>
+                        <p class="text-muted">San Miguel de Tucumán</p>
+                    </div>
                 </div>
 
+                <div class="d-flex align-items-start mb-4">
+                    <div class="bg-naranja text-white rounded-circle p-3 me-3 d-flex justify-content-center align-items-center" style="width: 50px; height: 50px;">
+                        <i class="fas fa-clock fa-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="fw-bold">Horarios de Atención</h4>
+                        <p class="mb-0 text-muted">Lun - Jue: 19:00 - 00:00</p>
+                        <p class="mb-0 text-muted">Vie - Dom: 19:00 - 02:00</p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-start mb-4">
+                    <div class="bg-naranja text-white rounded-circle p-3 me-3 d-flex justify-content-center align-items-center" style="width: 50px; height: 50px;">
+                        <i class="fas fa-phone-alt fa-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="fw-bold">Llámanos</h4>
+                        <p class="mb-0 text-muted">+54 9 381 615-1497</p>
+                        <small class="text-success fw-bold"><i class="fab fa-whatsapp"></i> Disponible para pedidos</small>
+                    </div>
+                </div>
+
+                <div class="mt-4 shadow-sm rounded overflow-hidden">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.102370980644!2d-65.20718382500003!3d-26.83669607669255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225d3ad7f30f1d%3A0xf8606cd659b2e396!2sSan%20Miguel%20de%20Tucum%C3%A1n%2C%20Tucum%C3%A1n!5e0!3m2!1ses-419!2sar!4v1685000000000!5m2!1ses-419!2sar" 
+                        width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+
+            </div>
+
+            <div class="col-md-7">
+                <div class="p-4 bg-white shadow rounded">
+                    <h3 class="mb-4">Envíanos un mensaje</h3>
+                    
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="nombreContacto" class="form-label">Nombre</label>
+                                <input type="text" maxlength="20" class="form-control" id="nombreContacto" placeholder="Tu nombre">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="emailContacto" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="emailContacto" placeholder="tucorreo@ejemplo.com">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="asunto" class="form-label">Asunto</label>
+                            <select class="form-select" id="asunto">
+                                <option selected>Consulta General</option>
+                                <option value="1">Sugerencia / Reclamo</option>
+                                <option value="2">Trabaja con nosotros</option>
+                                <option value="3">Eventos / Catering</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="mensajeContacto" class="form-label">Mensaje</label>
+                            <textarea class="form-control" maxlength="90" id="mensajeContacto" rows="5" placeholder="¿En qué podemos ayudarte?"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn bg-naranja text-white w-100 fw-bold">ENVIAR MENSAJE</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
         </section>
 
-        <article></article>
     </main>
 
     <footer class="text-white pt-5 pb-4" style="background-color: #fd7e14;">
