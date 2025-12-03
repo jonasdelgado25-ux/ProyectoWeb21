@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Carta</title>
+</head>
+<!--Script para el envio del mensaje en el formulario-->
+<script>
+    function mostrarDatosTransferencia() {
+        const selector = document.getElementById('pago');
+        const cajaDatos = document.getElementById('caja-transferencia');
+
+        if (selector.value === "Transferencia") {
+            cajaDatos.classList.remove('oculto');
+        } else {
+            cajaDatos.classList.add('oculto');
+        }
+    }
+
+    function enviarAWhatsApp() {
+        const telefono = "5493816151497"; 
+
+        const cliente = document.getElementById('cliente').value;
+        const direccion = document.getElementById('direccion').value;
+        const pedido = document.getElementById('pedido').value;
+        const pago = document.getElementById('pago').value;
+
+        if (cliente === "" || direccion === "" || pedido === "") {
+            alert("Por favor, completa los datos obligatorios.");
+            return;
+        }
+
+        // CORRECCIÓN 1: Usamos 'let' en lugar de 'const' para poder modificarlo
+        let mensaje = `Hola Pizza & Pazzione! Quiero hacer un pedido:\n\n` +
+                      `○ *Nombre:* ${cliente}\n` +
+                      `○ *Dirección:* ${direccion}\n` +
+                      `○ *Pedido:* ${pedido}\n` +
+                      `○ *Pago con:* ${pago}`;
+
+        // Ahora sí podemos modificar la variable porque es 'let'
+        if (pago === "Transferencia") {
+            mensaje += `\n(○ Envío comprobante en breve)`;
+        }
+
+        // CORRECCIÓN 3: Usamos encodeURIComponent
+        // Esto convierte los \n en %0A y los espacios en %20 automáticamente.
+        // Evita que el enlace se rompa si el cliente escribe un "&" o símbolos raros.
+        const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+        
+        window.open(url, '_blank');
+    }
+</script>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="../index.html">
+                    <img src="/assets/img/LogoSinFondoBlanco.png" height="50vh" alt="">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="../index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/pages/nosotros.html">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/pages/contacto.html">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/pages/carta.html">Carta</a></li>
+
+                    </ul>
+
+                    <a href="https://wa.me/3816151497" class="btn bg-naranja text-white" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Pedi ahora
+                    </a>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+    <main>
+        <div class=" pb-3 py-3 text-white text-center bg-naranja">
+
+            <h2>NUESTRAS ESPECIALIDADES</h2>
+        </div>
+
+        <section class="carta-pizzas">
+
+            <div class="pizza-item">
+                <div class="pizza-img-container">
+                    <img src="/assets/img/img-pizza-napolitana.png" alt="Pizza Napolitana">
+                </div>
+                <div class="pizza-info">
+                    <h3>Napolitana Clásica </h3>
+                    <p class="descripcion">Salsa de tomate San Marzano, mozzarella fior di latte fresca, albahaca y un
+                        toque de aceite de oliva virgen extra. La reina de la casa.</p>
+                    <span class="precio">$10000</span>
+                </div>
+            </div>
+
+            <div class="pizza-item">
+                <div class="pizza-img-container">
+                    <img src="/assets/img/img-pizza-peperoni.png" alt="Pizza Pepperoni Doble">
+                </div>
+                <div class="pizza-info">
+                    <h3>Pepperoni Lovers</h3>
+                    <p class="descripcion">Doble ración de pepperoni crujiente sobre nuestra mezcla especial de quesos y
+                        salsa de tomate especiada. Para los amantes del sabor intenso.</p>
+                    <span class="precio">$12500</span>
+                </div>
+            </div>
+
+            <div class="pizza-item">
+                <div class="pizza-img-container">
+                    <img src="/assets/img/img-pizza-vegie.png" alt="Pizza Vegetariana">
+                </div>
+                <div class="pizza-info">
+                    <h3>Huerta Fresca (Veggie)</h3>
+                    <p class="descripcion">Pimientos asados, champiñones, cebolla morada, aceitunas negras y rúcula
+                        fresca sobre base de tomate y mozzarella ligera.</p>
+                    <span class="precio">$14000</span>
+                </div>
+            </div>
+            <div class="pizza-item ">
+                <div class="pizza-img-container">
+                    <img src="/assets/img/img-pizza-hot.png" alt="Pizza Barbacoa">
+                </div>
+                <div class="pizza-info pizza-picante">
+                    <h3>PICANTE</h3>
+                    <p class="descripcion">Pollo troceado, champiñones, cebolla caramelizada, pepperoni y nuestra
+                        inconfundible salsa barbacoa <span class="text-danger fw-bold">PICANTE</span>.</p>
+                    <span class="precio">$18000</span>
+                </div>
+            </div>
+            <div class="pizza-item">
+                <div class="pizza-img-container">
+                    <img src="/assets/img/img-rabas.png" alt="Rabas">
+                </div>
+                <div class="pizza-info">
+                    <h3>Rabas</h3>
+                    <p class="descripcion">Rabas de calamar con mucho limon y nuestra salsa de apio.</p>
+                    <span class="precio">$9000 </span>
+                </div>
+            </div>
+            <div class="pizza-item pizza-img-container">
+                <img src="/assets/img/caja-empanadas.jpg" alt="Rabas">
+            </div>
+
+        </section>
+
+        <section class="pedido-container">
+            <div class="formulario-box">
+                <h3>🍕 Hacé tu pedido ahora</h3>
+
+                <form id="form-pedido">
+                    <div class="input-group">
+                        <label for="cliente">Tu Nombre:</label>
+                        <input type="text" id="cliente" placeholder="Ej: Juan Pérez" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="direccion">Dirección de entrega:</label>
+                        <input type="text" id="direccion" placeholder="Calle, número y piso" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="pedido">¿Qué vas a comer hoy?</label>
+                        <textarea id="pedido" rows="3" placeholder="Ej: 1 Napolitana y 2 Empanadas..."
+                            required></textarea>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="pago">Forma de Pago:</label>
+                        <select id="pago" onchange="mostrarDatosTransferencia()">
+                            <option value="Efectivo">Efectivo 💵</option>
+                            <option value="Transferencia">Transferencia 📱</option>
+                        </select>
+                    </div>
+
+                    <div id="caja-transferencia" class="datos-banco oculto">
+                        <p><strong>Alias:</strong> PIZZA.PAZZIONE.ROLLING</p>
+                        <p><strong>CBU:</strong> 2132124684643123214</p>
+                        <p><strong>Banco:</strong> Mercado Pago / ROLLING BANK </p>
+                        <small>⚠️ Por favor, envía el comprobante al chat de WhatsApp.</small>
+                    </div>
+
+                    <button type="button" class="btn-whatsapp" onclick="enviarAWhatsApp()">
+                        <i class="fab fa-whatsapp"></i> Enviar Pedido por WhatsApp
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <footer class="text-white pt-5 pb-4" style="background-color: #fd7e14;">
+        <div class="container text-center text-md-start">
+            <div class="row text-center text-md-start">
+
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <img src="/assets/img/LogoSinFondoBlanco.png" width="180em" alt="">
+                    <p>
+                        La tradicional pizza italiana en Tucuman
+                    </p>
+                </div>
+
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-white">Enlaces Rápidos</h5>
+                    <p>
+                        <a href="carta.html" class="text-white text-decoration-none">Carta</a>
+                    </p>
+                    <p>
+                        <a href="contacto.html" class="text-white text-decoration-none">Contacto</a>
+                    </p>
+                    <p>
+                        <a href="nosotros.html" class="text-white text-decoration-none">Nosotros</a>
+                    </p>
+                </div>
+
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-white">Contacto</h5>
+                    <p>
+                        <i class="fas fa-home mr-3"></i> Av. Principal 123, Ciudad
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope mr-3"></i> info@ejemplo.com
+                    <p>
+                        <i class="fab fa-whatsapp mr-3"></i>
+
+                        <a href="https://wa.me/5493816151497" class="text-white text-decoration-none" target="_blank">
+                            381 615-1497
+                        </a>
+                    </p>
+
+                </div>
+
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-white">Ubicación</h5>
+                    <div class="ratio ratio-1x1 " style="max-height: 200px;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.105916739557!2d-65.207167!3d-26.836583299999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225d3ad7f30f1d%3A0xf8606cd659b8e3e4!2sRollingCode%20School!5e0!3m2!1ses!2sar!4v1764635562656!5m2!1ses!2sar"
+                            style="border:0;" allowfullscreen="" loading="lazy" class="rounded-2"></iframe>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="mb-4">
+
+            <div class="row align-items-center">
+                <div class="col-md-7 col-lg-8">
+                    <p> Copyright ©2025 Todos los derechos reservados por:
+                        <a href="#" style="text-decoration: none;">
+                            <strong class="text-white">Grupo 2 - Rolling Code School</strong>
+                        </a>
+                    </p>
+                </div>
+                <div class="col-md-5 col-lg-4">
+                    <div class="text-center text-md-end">
+                        <ul class="list-unstyled list-inline">
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i
+                                        class="fab fa-facebook"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i
+                                        class="fab fa-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i
+                                        class="fab fa-instagram"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
