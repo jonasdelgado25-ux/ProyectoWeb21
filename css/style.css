@@ -157,3 +157,113 @@ body {
     background-color: #fd7e14 !important;
     color: white; /* Para que el texto se lea bien sobre el naranja */
 }
+
+
+.carousel-item {
+  transition: transform 1.5s ease-in-out !important;
+}
+
+
+
+/*************FORMULARIO EN CARTA ***********/
+/* Contenedor principal centrado */
+.pedido-container {
+    background-color: #f8f9fa; /* Gris muy clarito para separar */
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* La tarjeta del formulario */
+.formulario-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px; /* Para que sea "chico" como pediste */
+    text-align: center;
+}
+
+.formulario-box h3 {
+    color: #ff6b00; /* Naranja pizza */
+    margin-bottom: 10px;
+}
+
+/* Estilos de los inputs */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+/* Botón de WhatsApp */
+.btn-whatsapp {
+    background-color: #25D366; /* Verde oficial WhatsApp */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebc57;
+}
+
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    background-color: white; /* Importante para selectores */
+    cursor: pointer;
+}
+.oculto {
+    display: none;
+}
+
+/* Estilo de la cajita de transferencia */
+.datos-banco {
+    background-color: #e3f2fd; /* Azul clarito tipo alerta */
+    border-left: 5px solid #2196F3; /* Borde azul más fuerte */
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    text-align: left;
+    font-size: 0.9rem;
+    color: #333;
+    animation: fadeIn 0.5s; /* Un pequeño efecto de aparición suave */
+}
+
+.datos-banco p {
+    margin: 5px 0; /* Separación entre líneas */
+}
+
+/* Animación opcional para que aparezca suavemente */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

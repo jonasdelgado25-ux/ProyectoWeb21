@@ -12,34 +12,66 @@
 </head>
 
 <body>
- 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
-            <div class="container">
-                <a class="navbar-brand fw-bold" href="index.html" style="color:#ff3d3d;">
-                    <img src="/assets/img/LogoSinFondoBlanco.png" height="50vh" alt="">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html" style="color:#ff3d3d;">
+                <img src="/assets/img/LogoSinFondoBlanco.png" height="50vh" alt="">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="/index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/pages/nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/pages/contacto.html">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/pages/carta.html">Carta</a></li>
+                </ul>
+                <a href="https://wa.me/3816151497" class="btn bg-naranja text-white" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i> Pedi ahora
                 </a>
+            </div>
+        </div>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link active" href="/index.html">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/pages/nosotros.html">Nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/pages/contacto.html">Contacto</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/pages/carta.html">Carta</a></li>
-                    </ul>
-                      <a href="https://wa.me/3816151497" class="btn bg-naranja text-white" target="_blank">
-                        <i class="fa-brands fa-whatsapp"></i> Pedi ahora
-                    </a>
-                </div>
+    </nav>
+
+    <!--  <img src="assets/img/bannerSaborpizzaitaliana.jpg" alt="" width="100%" class=""> -->
+
+
+    <video width="100%" autoplay loop muted playsinline>
+        <source src="/assets/video/video-loopPizza.mp4" type="video/mp4">
+        Tu navegador no soporta la etiqueta de video.
+    </video>
+
+
+    <div id="carruselImagenes" class="carousel slide " data-bs-ride="carousel" data-bs-pause="false">
+        <div class="carousel-inner">
+
+            <div class="carousel-item active" data-bs-interval="3000">
+                <img src="assets/img/banner-LlegandoATucuman.jpg" class="d-block w-100" alt="Descripción imagen 1">
+            </div>
+            <div class="carousel-item " data-bs-interval="3000">
+                <img src="assets/img/bannerSaborpizzaitaliana.jpg" class="d-block w-100" alt="Descripción imagen 1">
             </div>
 
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="assets/img/banner-promoMP.jpg" class="d-block w-100" alt="Descripción imagen 2">
+            </div>
 
-        </nav>
-    
-    <img src="assets/img/bannerSaborpizzaitaliana.jpg" alt="" width="100%" class="">
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="assets/img/banner-sevienencositas.jpg" class="d-block w-100" alt="Descripción imagen 3">
+            </div>
+
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="assets/img/banner-promoRolling.jpg" class="d-block w-100" alt="Descripción imagen 3">
+            </div>
+
+        </div>
+    </div>
 
 
 
@@ -58,17 +90,15 @@
                 <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
                     <h5 class="text-uppercase mb-4 font-weight-bold text-white">Enlaces Rápidos</h5>
                     <p>
-                        <a href="#" class="text-white text-decoration-none">La Carta</a>
+                        <a href="pages/carta.html" class="text-white text-decoration-none">Carta</a>
                     </p>
                     <p>
-                        <a href="#" class="text-white text-decoration-none">Fotos</a>
+                        <a href="pages/contacto.html" class="text-white text-decoration-none">Contacto</a>
                     </p>
                     <p>
-                        <a href="#" class="text-white text-decoration-none">Eventos</a>
+                        <a href="pages/nosotros.html" class="text-white text-decoration-none">Nosotros</a>
                     </p>
-                    <p>
-                        <a href="#" class="text-white text-decoration-none">Reservas</a>
-                    </p>
+
                 </div>
 
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
